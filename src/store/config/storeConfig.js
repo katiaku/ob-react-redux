@@ -22,7 +22,7 @@ export const createAppAsyncStore = () => {
         )
         );
     
-    // We init the Watcher Saga
+    // Init the Watcher Saga
     sagaMiddleware.run(watcherSaga);
 
     return store;

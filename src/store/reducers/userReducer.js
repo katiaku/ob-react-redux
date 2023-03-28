@@ -1,6 +1,5 @@
 import { API_CALL_FAILURE, API_CALL_REQUEST, API_CALL_SUCCESS } from "../actions/asyncActions";
 
-// Initial State for userState
 const initialState = {
     fetching: false,
     token: null,

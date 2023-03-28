@@ -4,10 +4,9 @@ import axios from 'axios';
 import { API_CALL_REQUEST } from '../actions/asyncActions';
 
 
-// Watcher SAGA
-// Listens the API_CALL_REQUEST actions
+// SAGA Watcher
+// Listens to API_CALL_REQUEST actions
 export function* watcherSaga(){
-    // Listens the action and starts a Worker Saga
     yield takeLatest(API_CALL_REQUEST, workerSaga)
 }
 
@@ -16,7 +15,6 @@ export function* watcherSaga(){
 export function* workerSaga(action){
     try {
         const response = yield call(fetchHttp(action.payload.request))
-        // We Obtain the token from response
         const token = response.data.token;
         yield put({
             type: action.payload.okAction, // API_CALL_SUCCESS

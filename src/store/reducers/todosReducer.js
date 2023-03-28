@@ -1,7 +1,5 @@
 import { ADD_TODO, TOGGLE_TODO } from '../actions/actions';
 
-// Initial TodosState
-// Initialy todos is empty
 let initialState = [];
 
 export const todosReducer = (state=initialState, action) => {

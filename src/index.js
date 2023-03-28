@@ -5,12 +5,10 @@ import App from './App';
 import AppReduxSaga from './AppReduxSaga';
 import reportWebVitals from './reportWebVitals';
 
-// Redux Imports:
 import { Provider } from 'react-redux';
-// Import Config Function of App Store
+
 import { createAppStore, createAppAsyncStore } from './store/config/storeConfig'
- 
-// We create the App Store
+
 let appStore = createAppStore()
 let appAsyncStore = createAppAsyncStore()
 

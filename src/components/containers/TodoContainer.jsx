@@ -36,7 +36,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-// We connect State & Dispach to TodoList's Props 
+// Connect State & Dispach to TodoList's Props 
 const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
 export default TodosContainer;
