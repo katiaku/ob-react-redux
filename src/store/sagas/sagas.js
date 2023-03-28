@@ -3,15 +3,12 @@ import axios from 'axios';
 
 import { API_CALL_REQUEST } from '../actions/asyncActions';
 
-
-// SAGA Watcher
-// Listens to API_CALL_REQUEST actions
+// WATCHER SAGA (listens to API_CALL_REQUEST actions)
 export function* watcherSaga(){
     yield takeLatest(API_CALL_REQUEST, workerSaga)
 }
 
-// WORKER SAGA
-// Is called from watcher Saga, does the Login and Dispaches an action
+// WORKER SAGA (called from watcher Saga, logins and dispaches an action)
 export function* workerSaga(action){
     try {
         const response = yield call(fetchHttp(action.payload.request))

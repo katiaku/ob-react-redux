@@ -14,7 +14,7 @@ const loginSchema = Yup.object().shape(
     }
 );
 
-const Loginform = ({loged, fetching, onLogin}) => {
+const Loginform = ({logged, fetching, onLogin}) => {
 
     const initialCredentials = {
         email: '',
@@ -23,16 +23,13 @@ const Loginform = ({loged, fetching, onLogin}) => {
 
     return (
         <Formik
-                // *** Initial values that the form will take
                 initialValues = { initialCredentials }
-                // *** Yup Validation Schema ***
                 validationSchema = {loginSchema}
-                // ** onSubmit Event
                 onSubmit={async (values) => {
                     onLogin(values.email, values.password)
                 }}
             >
-                {/* We obtain props from Formik */}
+                {/* Obtain props from Formik */}
                 
                 {({ values,
                     touched,
@@ -43,7 +40,6 @@ const Loginform = ({loged, fetching, onLogin}) => {
                         <Form>
                             <label htmlFor="email">Email</label>
                             <Field id="email" type="email" name="email" placeholder="example@email.com" />
-
                             {/* Email Errors */}
                             {
                                 errors.email && touched.email && 
@@ -77,7 +73,7 @@ const Loginform = ({loged, fetching, onLogin}) => {
 
 
 Loginform.propTypes = {
-    loged: PropTypes.bool.isRequired,
+    logged: PropTypes.bool.isRequired,
     fetching: PropTypes.bool.isRequired,
     onLogin: PropTypes.func.isRequired
 };

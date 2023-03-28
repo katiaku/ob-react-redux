@@ -4,9 +4,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from '../reducers/rootReducer';
 import { watcherSaga } from '../sagas/sagas';
 
+// createStore is deprecated. Should be using the configureStore method of the @reduxjs/toolkit package
+
 export const createAppStore = () => {
     let store = createStore(rootReducer, composeWithDevTools());
-
     return store;
 }
 

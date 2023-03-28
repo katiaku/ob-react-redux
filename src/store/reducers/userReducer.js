@@ -4,7 +4,7 @@ const initialState = {
     fetching: false,
     token: null,
     error: null,
-    loged: false
+    logged: false
 }
 
 export const userReducer = (state=initialState, action) => {
@@ -16,7 +16,7 @@ export const userReducer = (state=initialState, action) => {
                 fetching: true,
                 token: null,
                 error: null,
-                loged: false
+                logged: false
             }
         case API_CALL_SUCCESS:
             return {
@@ -24,7 +24,7 @@ export const userReducer = (state=initialState, action) => {
                 fetching: false,
                 token: action.payload.token,
                 error: null,
-                loged: true,
+                logged: true,
             }
         case API_CALL_FAILURE:
             return {
@@ -32,10 +32,9 @@ export const userReducer = (state=initialState, action) => {
                 fetching: false,
                 token: null,
                 error: action.payload.error,
-                loged: false
+                logged: false
             }
         default:
             return state;
     }
-
 }

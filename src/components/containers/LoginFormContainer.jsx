@@ -5,7 +5,7 @@ import { httpRequest } from '../../store/actions/asyncActions';
 
 const mapStateToProps = (state) => {
     return {
-        loged: state.userState.loged,
+        logged: state.userState.loged,
         fetching: state.userState.fetching
     }
 }
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
                 password: password
             }
             const url = 'https://reqres.in/api/login'
-            dispatch(httpRequest('post',url,data));
+            dispatch(httpRequest('post', url, data));
         }
     }
 }
